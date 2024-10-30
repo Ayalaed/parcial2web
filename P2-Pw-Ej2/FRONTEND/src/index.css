@@ -1,12 +1,13 @@
 
 body {
-  background: linear-gradient(135deg, #f5b5cf, #f0c9ff);
+  background-color: #ffffff;
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  flex-direction: column;
 }
 
 h1 {
@@ -17,11 +18,11 @@ h1 {
 }
 
 .usuarios-container, form {
-  background: linear-gradient(135deg, #ff8a94, #f7b6c2);
-  color: #fff;
+  background: linear-gradient(135deg, #ffd3e2, #ffc1d3);
+  color: #333;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -29,10 +30,35 @@ h1 {
 }
 
 .usuarios-titulo {
-  color: #fff;
+  color: #333;
   font-size: 26px;
   margin-bottom: 25px;
   font-weight: bold;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.nav-bar a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffc1d3;
+  color: #333;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar a:hover {
+  background-color: #ffb3c6;
+  transform: translateY(-2px);
 }
 
 .usuarios-lista {
@@ -42,11 +68,11 @@ h1 {
 }
 
 .usuario-item {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 193, 211, 0.3);
   padding: 12px;
   border-radius: 6px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #333;
   transition: transform 0.2s ease;
 }
 
@@ -57,8 +83,8 @@ h1 {
 button, .regresar-boton {
   width: 100%;
   padding: 12px;
-  background-color: #ff6b81;
-  color: #fff;
+  background-color: #ffc1d3;
+  color: #333;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -70,8 +96,9 @@ button, .regresar-boton {
 }
 
 button:hover, .regresar-boton:hover {
-  background-color: #e05d70;
+  background-color: #ffb3c6;
 }
+
 
 input[type="text"],
 input[type="number"],
@@ -93,19 +120,6 @@ input[type="email"]:focus {
   box-shadow: 0 0 5px rgba(255, 105, 135, 0.5);
 }
 
-
-.nav-bar a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.nav-bar a:hover {
-  color: #ffcc00;
-}
 
 @media (max-width: 400px) {
   .usuarios-container, form {
