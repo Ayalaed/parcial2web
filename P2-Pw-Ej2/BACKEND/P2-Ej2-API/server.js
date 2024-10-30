@@ -3,12 +3,12 @@ import cors from 'cors';
 
 const app = express();
 const port = 3000;
-
 app.use(cors());
 app.use(express.json());
 
 let users = [];
 
+// Función para validar datos de usuario
 function validateUserData({ nombre, edad, correo }) {
     if (!nombre || typeof nombre !== 'string' || nombre.trim() === '') {
         return { valid: false, message: 'El nombre es requerido y debe ser un string válido.' };
