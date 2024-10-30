@@ -6,11 +6,12 @@ function ListaUsuarios() {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/users')
+    fetch('http://35.175.21.0/api/users')
       .then((response) => response.json())
       .then((data) => setUsuarios(data))
       .catch((error) => console.error('Error al obtener los usuarios:', error));
   }, []);
+  
 
   return (
     <div className="usuarios-container">
