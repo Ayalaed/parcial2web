@@ -8,15 +8,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Formulario</Link>
-            </li>
-            <li>
-              <Link to="/usuarios">Lista de Usuarios</Link>
-            </li>
-          </ul>
+        <nav className="nav-bar">
+          <Link to="/" className="boton">Formulario</Link>
+          <Link to="/usuarios" className="boton">Lista de Usuarios</Link>
         </nav>
         <Routes>
           <Route exact path="/" element={<Formulario />} />
