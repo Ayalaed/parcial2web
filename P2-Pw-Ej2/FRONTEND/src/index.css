@@ -183,10 +183,10 @@ button[type="submit"]:hover {
 
 .boton {
   padding: 10px 20px;
-  background-color: #ffc1d3; /* Rosa pastel */
-  color: #333; /* Color de texto */
+  background-color: #218838; /* Rosa pastel */
+  color: #fff; /* Color de texto */
   border: none;
-  border-radius: 30px;
+  border-radius: 8px;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -196,7 +196,7 @@ button[type="submit"]:hover {
 }
 
 .boton:hover {
-  background-color: #ffb3c6;
+  background-color: #218838;
   transform: translateY(-2px);
 }
 
