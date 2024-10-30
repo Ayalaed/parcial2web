@@ -36,13 +36,14 @@ function Formulario() {
         setEnviado(true);               
         setUsuarioEnviado(usuario);     
         setNombre("");                  
-        setEdad("");                     
-        setCorreo("");                   
+        setEdad("");                    
+        setCorreo("");                  
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
+  
   return (
     <div>
       {enviado ? (
@@ -53,8 +54,8 @@ function Formulario() {
             <li>Edad: {usuarioEnviado?.edad}</li>
             <li>Correo: {usuarioEnviado?.correo}</li>
           </ul>
-          <button onClick={() => setEnviado(false)}>Registrar otro usuario</button>
-          <button onClick={() => navigate('/usuarios')}>Ver Lista de Usuarios</button>
+          <button className="boton" onClick={() => setEnviado(false)}>Registrar otro usuario</button>
+          <button className="boton" onClick={() => navigate('/usuarios')}>Ver Lista de Usuarios</button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -88,12 +89,11 @@ function Formulario() {
               required
             />
           </div>
-          <button type="submit">Enviar</button>
+          <button type="submit" className="boton">Enviar</button>
         </form>
       )}
     </div>
   );
-  
 }
 
 export default Formulario;
