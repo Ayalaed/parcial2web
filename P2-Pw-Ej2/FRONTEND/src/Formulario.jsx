@@ -6,18 +6,20 @@ function Formulario() {
   const [edad, setEdad] = useState('');
   const [correo, setCorreo] = useState('');
   const [enviado, setEnviado] = useState(false);
+  const [usuarioEnviado, setUsuarioEnviado] = useState(null);
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     const usuario = {
       nombre,
       edad: parseInt(edad),
       correo,
     };
-
-    fetch("http://localhost:3000/api/users", {
+  
+    fetch("http://35.175.21.0/api/users", {  
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,25 +33,25 @@ function Formulario() {
         return response.json();
       })
       .then((data) => {
-        setEnviado(true);
-        setNombre("");
-        setEdad("");
-        setCorreo("");
+        setEnviado(true);               
+        setUsuarioEnviado(usuario);     
+        setNombre("");                  
+        setEdad("");                     
+        setCorreo("");                   
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
-
   return (
     <div>
       {enviado ? (
         <div>
           <h1>Datos Enviados</h1>
           <ul>
-            <li>Nombre: {nombre}</li>
-            <li>Edad: {edad}</li>
-            <li>Correo: {correo}</li>
+            <li>Nombre: {usuarioEnviado?.nombre}</li>
+            <li>Edad: {usuarioEnviado?.edad}</li>
+            <li>Correo: {usuarioEnviado?.correo}</li>
           </ul>
           <button onClick={() => setEnviado(false)}>Registrar otro usuario</button>
           <button onClick={() => navigate('/usuarios')}>Ver Lista de Usuarios</button>
@@ -91,6 +93,7 @@ function Formulario() {
       )}
     </div>
   );
+  
 }
 
 export default Formulario;
